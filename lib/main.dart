@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ort_hesap/sayfa1.dart';
 import 'package:ort_hesap/sayfa3.dart';
 
+import 'confetti.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: MyHomePage(title: 'Not Hesaplama'),
+      home: MyHomePage(title: 'Hoşgeldun Hamsi Kafali'),
     );
   }
 }
@@ -62,6 +64,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => PageFour()));
               },
               child: Text('KURUL'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfettiSample(),
+                    ));
+              },
+              child: Text('EĞLENCE'),
             ),
           ],
         ),
